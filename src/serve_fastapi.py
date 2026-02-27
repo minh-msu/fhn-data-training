@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import mlflow.pyfunc
 import pandas as pd
-from test.test_schema import *
+from tests.test_schema import *
 
 app = FastAPI(title="NYC Taxi Fare Prediction", version="1.0")
 model = mlflow.pyfunc.load_model("models:/fare-model/Production")

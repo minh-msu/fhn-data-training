@@ -26,7 +26,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Model Registry script")
 
     parser.add_argument(
-        "--model-name",
+        "--model_name",
         type=str,
         required=True,
         help="Name of MLFlow model",
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     transition(
-        model_name=args.model-name,
+        model_name=args.model_name,
         version=args.version,
         stage=args.stage,
         rollback=args.rollback
