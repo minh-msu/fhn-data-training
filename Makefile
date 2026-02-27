@@ -5,7 +5,7 @@ tune:
 register:
   python src/register.py --model-name fare-model --version 3 --stage Production
 serve:
-  uvicorn src/serve_fastapi:app --host 0.0.0.0 --port 8000
+  uvicorn src.serve_fastapi:app --host 0.0.0.0 --port 8000
 test:
   python tests/test_api.py
 batch:
