@@ -1,1 +1,8 @@
-
+pip install pandas
+pip install numpy
+pip install mlflow
+pip install fastapi
+pip install xgboost
+pip install scikit-learn
+pip install pydantic
+pip install requests
