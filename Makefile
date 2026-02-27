@@ -10,4 +10,4 @@ serve:
 test:
 	python tests/test_api.py
 batch:
-	python src/batch_infer.py --input data/test.csv --output data/submission.csv --model-uri models:/fare-model/Production
+	python src/batch_infer.py --input data/test.csv --output data/scored.csv --model-uri models:/fare-model/Production
