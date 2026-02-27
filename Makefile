@@ -1,12 +1,12 @@
 train:
-  python src/train.py
+	python src/train.py
 tune: 
-  python src/tune.py
+	python src/tune.py
 register:
-  python src/register.py --model-name fare-model --version 3 --stage Production
+	python src/register.py --model_name fare-model --version 3 --stage Production
 serve:
-  uvicorn src.serve_fastapi:app --host 0.0.0.0 --port 8000
+	uvicorn src.serve_fastapi:app --host 0.0.0.0 --port 8000
 test:
-  python tests/test_api.py
+	python tests/test_api.py
 batch:
-  python src/batch_infer.py --input data/test.csv --output data/submission.csv --model-uri models:/fare-model/Production
+	python src/batch_infer.py --input data/test.csv --output data/submission.csv --model-uri models:/fare-model/Production
