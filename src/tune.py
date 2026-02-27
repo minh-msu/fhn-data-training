@@ -11,7 +11,7 @@ from utils import *
 
 def main():
     df = next(
-        pd.read_csv("../data/train.csv", chunksize=100000)
+        pd.read_csv("data/train.csv", chunksize=100000)
     )
     X, y = transform("../data/train.csv")
     features = X.columns.tolist()
