@@ -5,6 +5,8 @@ tune:
 register:
 	python src/register.py --model_name fare-model --version 3 --stage Staging
 	python src/register.py --model_name fare-model --version 3 --stage Production
+rollback:
+	python src/register.py --model_name fare-model --version 2 --stage Production --rollback
 serve:
 	uvicorn src.serve_fastapi:app --host 0.0.0.0 --port 8000
 test:
