@@ -11,7 +11,6 @@ import xgboost
 from xgboost import XGBRegressor
 
 from utils import *
-from tune import *
 
 def main():
     df = next(
@@ -25,7 +24,6 @@ def main():
         shuffle=False
     )
 
-    client = mlflow.MlflowClient()
     mlflow.set_experiment("taxi-fare-prediction")
     mlflow.autolog(log_models=False)
     
@@ -63,7 +61,8 @@ def main():
             "student_name": "minh_anh_dang",
         })
       
-        model = tuning(XGBRegressor(), X_train, y_train)
+        model = XGBRegressor()
+        model.fit(X_train, y_train)
         
         y_pred = model.predict(X_test).ravel()
         rmse = root_mean_squared_error(y_test, y_pred)
